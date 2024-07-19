@@ -1,6 +1,6 @@
 from typing import List, Dict
-from book import Book
-from utils import load_books, save_books
+from library.storage import load_books, save_books
+from library.models import Book
 
 
 def add_book(title: str, author: str, year: int):
@@ -9,7 +9,7 @@ def add_book(title: str, author: str, year: int):
     new_book = Book(title, author, year)
     books.append(new_book.to_dict())
     save_books(books)
-    print(f'Книга "{title}" успешно добавлена с ID {new_book.id}.')
+    print(f'Книга "{title}" успешно добавлена c ID {new_book.id}.')
 
 
 def delete_book(book_id: int):
@@ -17,7 +17,7 @@ def delete_book(book_id: int):
     books = load_books()
     books = [book for book in books if book["id"] != book_id]
     save_books(books)
-    print(f"Книга с ID {book_id} успешно удалена.")
+    print(f"Книга c ID {book_id} успешно удалена.")
 
 
 def find_books(query: str, by: str = "title") -> List[Dict]:
@@ -44,4 +44,4 @@ def update_status(book_id: int, status: str):
             book["status"] = status
             break
     save_books(books)
-    print(f'Статус книги с ID {book_id} успешно обновлен на "{status}".')
+    print(f'Статус книги c ID {book_id} успешно обновлен на "{status}".')
