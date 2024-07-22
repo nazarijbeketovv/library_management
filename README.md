@@ -28,7 +28,7 @@ cd library_management
 1. **Убедитесь, что у вас установлена версия Python 3.12.x**
 2.
 ```bash
-python main.py
+python3 main.py
 ```
 
 ## Запуск с использованием Docker
