@@ -45,7 +45,7 @@ docker run -it --rm library_management
 ## Для запуска тестов используйте команду:
 
 ```bash
-python -m unittest discover tests
+python3 -m unittest discover tests
 ```
 
 # 📜 Требования
